@@ -214,7 +214,7 @@ def main():
         mb_size = [4096]
         context_frames = (0,0)
         frame_mode = False
-        max_epochs = 1
+        max_epochs = 10
     else:
         raise RuntimeError("type must be DNN or BLSTM")
 

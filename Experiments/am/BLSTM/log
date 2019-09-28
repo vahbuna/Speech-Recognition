@@ -1,0 +1,17 @@
+../Experiments/am/BLSTM/log
+CNTKCommandTrainInfo: train : 10
+CNTKCommandTrainInfo: CNTKNoMoreCommands_Total : 10
+CNTKCommandTrainBegin: train
+Learning rate per 1 samples: 0.0001
+Momentum per 1 samples: 0.9996000799893344
+Finished Epoch[1 of 10]: [CE_Training] loss = 2.566013 * 1258952, metric = 69.46% * 1258952 262.129s (4802.8 samples/s);
+Finished Epoch[2 of 10]: [CE_Training] loss = 2.076694 * 1258146, metric = 59.36% * 1258146 259.916s (4840.6 samples/s);
+Finished Epoch[3 of 10]: [CE_Training] loss = 1.818000 * 1255026, metric = 53.71% * 1255026 259.652s (4833.5 samples/s);
+Finished Epoch[4 of 10]: [CE_Training] loss = 1.631291 * 1259879, metric = 49.34% * 1259879 260.860s (4829.7 samples/s);
+Finished Evaluation [1]: Minibatch[1-466]: metric = 52.03% * 370331;
+Finished Epoch[5 of 10]: [CE_Training] loss = 1.492614 * 1254417, metric = 45.85% * 1254417 319.938s (3920.8 samples/s);
+Finished Epoch[6 of 10]: [CE_Training] loss = 1.377065 * 1258683, metric = 42.82% * 1258683 261.005s (4822.4 samples/s);
+Finished Epoch[7 of 10]: [CE_Training] loss = 1.283453 * 1255885, metric = 40.33% * 1255885 257.980s (4868.1 samples/s);
+Finished Epoch[8 of 10]: [CE_Training] loss = 1.208885 * 1257284, metric = 38.37% * 1257284 259.500s (4845.0 samples/s);
+Finished Epoch[9 of 10]: [CE_Training] loss = 1.139249 * 1257284, metric = 36.45% * 1257284 260.615s (4824.3 samples/s);
+Finished Evaluation [2]: Minibatch[1-466]: metric = 43.27% * 370331;

@@ -46,7 +46,7 @@ def plot_log_info(filename):
     ax[1].legend()
     ax[1].grid(True)
     plt.savefig('fig/log.png', bbox_inches='tight')
-    plt.show()
+    #plt.show()
 
 
 if __name__ == '__main__':
