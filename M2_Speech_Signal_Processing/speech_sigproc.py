@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+
 class FrontEnd:
 
     def __init__(self, samp_rate=16000, frame_duration=0.025, frame_shift=0.010, preemphasis=0.97,
@@ -74,9 +75,12 @@ class FrontEnd:
     # replace this with proper pre-emphasis filtering, using the self.preemphasis coefficient
     def pre_emphasize(self, wav):
         # apply pre-emphasis filtering on waveform
-        preemph_wav = []
+        alpha = 0.97
+        preemph_wav = wav.copy()
+        preemph_wav[:-1] = wav[:-1] - alpha * wav[1:]
         return preemph_wav
 
+    # Dividing the signal into overlapping segments or frames
     def wav_to_frames(self, wav):
         # only process whole frames
         num_frames = int(np.floor((wav.shape[0] - self.win_size) / self.win_shift) + 1)
@@ -91,21 +95,24 @@ class FrontEnd:
     # for each frame (column of 2D array 'frames'), compute the magnitude spectrum using the fft
     def frames_to_magspec(self, frames):
         # compute the fft
+        fft = np.fft.rfft(frames, self.fft_size, axis=0) 
         # compute magnitude
-        magspec = []
+        magspec = np.abs(fft) 
+        # magspec = ((1.0 / self.fft_size) * ((np.abs(fft)) ** 2))
         return magspec
 
     # for each frame(column of 2D array 'magspec'), compute the log mel spectrum, by applying the mel filterbank to the magnitude spectrum
     def magspec_to_fbank(self, magspec):
         # apply the mel filterbank
-        fbank = []
-        return fbank
+        fbank = np.dot(self.mel_filterbank, magspec)
+        return np.log(fbank)
 
     # compute the mean vector of fbank coefficients in the utterance and subtract it from all frames of fbank coefficients
     def mean_norm_fbank(self, fbank):
         # compute mean fbank vector of all frames
+        m = np.mean(fbank)
         # subtract it from each frame
-        return fbank
+        return fbank - m
 
     # accumulates sufficient statistics for corpus mean and variance
     def accumulate_stats(self, fbank):

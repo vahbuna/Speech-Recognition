@@ -6,7 +6,7 @@ import htk_featio as htk
 import speech_sigproc as sp
 
 data_dir = '../Experiments'
-wav_file='../LibriSpeech/dev-clean/1272/128104/1272-128104-0000.flac'
+wav_file='../../LibriSpeech/dev-clean/1272/128104/1272-128104-0000.flac'
 feat_file=os.path.join(data_dir,'feat/1272-128104-0000.feat')
 plot_output=True
 

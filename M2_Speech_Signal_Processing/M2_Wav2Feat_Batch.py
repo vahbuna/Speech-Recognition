@@ -25,7 +25,7 @@ if __name__=='__main__':
     rscp_dir = "..." # note ... is CNTK notation for "relative to the location of the list of feature files
     mean_file = os.path.join(data_dir,"am/feat_mean.ascii")
     invstddev_file = os.path.join(data_dir,"am/feat_invstddev.ascii")
-    wav_dir = ".."
+    wav_dir = "../.."
 
     if not os.path.exists(os.path.join(data_dir,'am')):
         os.mkdir(os.path.join(data_dir,'am'))
